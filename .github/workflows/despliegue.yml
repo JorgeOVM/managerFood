@@ -13,7 +13,7 @@ jobs:
       DB_URL: jdbc:mysql://root:JjNlCZhrkTiRxXkXAIxmjTSpFvLquIpi@junction.proxy.rlwy.net:39909/railway
       DB_USER_NAME: root
       DB_PASSWORD: JjNlCZhrkTiRxXkXAIxmjTSpFvLquIpi
-      PROFILE: docker
+      SPRING_PROFILES_ACTIVE: docker
 
     steps:
       - name: Checkout code
