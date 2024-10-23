@@ -8,7 +8,7 @@ services:
       - "8080:8080"
     environment:
       SPRING_PROFILES_ACTIVE: docker
-      DB_URL: jdbc:mysql://foodManager:3306/railway?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_URL: mysql://root:JjNlCZhrkTiRxXkXAIxmjTSpFvLquIpi@junction.proxy.rlwy.net:39909/railway
       DB_USER_NAME: root
       DB_PASSWORD: root
     restart: always
