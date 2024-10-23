@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+body{
+    background-color: #EFF5FB;
+    color: #5C5C5C;
+
+    
+}
+
+.title{
+    color: #000;
+    font-family: 'Oswald',sans-serif;
+}
+
+.container-body-par{
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+}
+
+.header-container{
+    background-color: #141415;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+.header-container hr{
+    margin-top: 0.5em;
+    border: none;
+    border-top: 2px dashed #323234;
+}
+
+.header-body{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.header-line-up{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Lato',sans-serif;
+    
+}
+
+.header-line-up-left{
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    
+}
+.header-line-up-left img{
+    width: 25px;
+    padding-left: 1em;
+    
+    
+}
+.header-line-up-right{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.header-line-up-right img{
+    width: 25px;
+    padding-right: 1.5em;
+    padding-left: 0.5em;
+}
+
+.header-banner-navbar{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+    padding-left: 5em;
+    color: #fff;
+    font-family: 'Lato',sans-serif;
+    font-weight: normal;
+}
+
+.header-banner-navbar-left{
+    display: flex;
+    align-items: center;
+}
+
+.header-banner-navbar-left p{
+    padding-left: 6em;
+}
+
+.header-banner-navbar-right{
+    display: flex;
+    align-items: center;
+    padding-right: 1em;
+}
+
+.header-banner-navbar-right img{
+    width: 50px;
+    padding-right: 1em;
+}
+
+.header-banner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    padding-top: 3em;
+    padding-bottom: 10em;
+    
+}
+
+.header-banner img{
+ width: 450px;
+    
+}
+
+.header-banner-text{
+    width: 40%;
+    text-align: justify;
+    
+}
+
+
+
+.header-banner-title{
+    font-family: 'Oswald',sans-serif;
+    font-size: 5em;
+    letter-spacing: 3px;
+    
+}
+
+.container-body-index{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: -5em 0em 0em 18em ;
+    padding: 4em 0em 4em 2em;
+    background-color: #fff;
+    position: relative;
+   
+}
+
+.container-body-index h1{
+   
+    padding-bottom: 0.5em;
+}
+.body-index{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-index img{
+    width: 320px;
+}
+
+.container-gallery{
+    overflow: hidden;
+    background-color: #141414;
+    padding: 2em 0em 4em 0em;
+}
+
+.container-gallery-title{
+   padding-left: 8em;
+   padding-bottom: 1em;
+    color: #fff;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 35px;
+}
+
+.container-gallery-child{
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-card img{
+    width: 310px;
+    margin: 0em 2em 0 2em;
+}
+.gallery-card{
+    transition: all 0.4s ease-out;
+}
+.gallery-card:hover{
+    transform: scale(1.13);
+    
+    
+}
+
+.container-body-aboutus{
+    display: flex;
+    align-items: flex-start;
+    width: 70%;
+    margin: 3em auto;
+    
+    
+}
+.body-aboutus h1{
+    padding-top: 3em;
+     padding-bottom: 1em;
+     
+}
+
+.body-aboutus img{
+    width: 650px;
+}
+
+.container-contact-child{
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+.container-contact-info{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.contact-item{
+    display: flex;
+}
+
+.container-horario{
+    border: 1px solid ;
+    width: 450px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/horario-textura.jpg);
+    background-size: cover;
+    color: #fff;
+}
+
+.container-horario-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    border: 1px solid;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    font-family: 'Oswald',sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.container-horario-child ul li{
+    list-style: none;
+    padding: 1em 0em 0em 0em;
+    background-image: url(../img/icons/icon-reloj.png);
+    background-repeat: no-repeat;
+    background-position: 1.4em 1.4em;
+    text-align: left;
+    padding-left: 3em;
+    
+    
+    
+}
+
+.container-horario-child p{
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.container-footer{
+    padding: 3em 0em 3em 0em;
+    background-color: #141415;
+}
+
+.container-footer-child{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 70%;
+    color: #fff;
+    
+}
+
+.footer-item{
+    display: flex;
+    flex-direction: column;
+    width: 500PX;
+    font-family: 'Roboto Slab', serif;
+    font-size: 13px;
+    
+     
+}
+
+.footer-item h1{
+    color: #fff;
+    align-self: center;
+}
+
+
+.footer-item img{
+    width: 200px;
+    padding-bottom: 2em;
+   
+}
+
+.footer-container-list{
+    padding-top: 1em;
+    
+}
+
+.footer-list{
+    display: flex;
+    align-items: flex-start;
+    
+
+}
+
+.footer-list img{
+    width: 15px;
+    padding-right: 0.5em;
+    
+}
+
+.footer-copy{
+    padding-top: 3em;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Roboto Slab', serif;
+}
+.footer-copy hr{
+    padding-top: 1em;
+    border: none;
+    border-top: 2px dashed #323234;
+    
+
+    
+}

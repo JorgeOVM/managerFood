@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/admincat.css">
+    
+    <link rel="stylesheet" href="css/footer.css">
+  
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/paneladmin.css">
+    
+    
+    <title>Administración de Categorias</title>
+
+
+    <!--GRAFICO JAVASCRIPT-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Día');
+      data.addColumn('number', 'Hamburguesas');
+      data.addColumn('number', 'Perros');
+      data.addColumn('number', 'Pizzas');
+      data.addColumn('number', 'Bebidas');
+      data.addColumn('number', 'Adicionales');
+
+      data.addRows([
+        [1,  37, 30, 41, 12, 50],
+        [2,  30, 40, 32, 14, 45],
+        [3,  25, 42, 25, 16, 43],
+        [4,  30, 46, 10, 20, 42],
+        [5,  30, 39, 10, 24, 40],
+        [6,  30, 42,  7, 24, 38],
+        [7,  28, 38,  9, 26, 35],
+        [8,  34, 36, 10, 20, 35],
+        [9,  32, 31, 14, 19, 35],
+        [10, 32, 26, 11, 21, 30],
+        [11,  34,  22,  4, 27, 28],
+        [12,  36,  20,  5, 30, 28],
+        [13,  40,  13,  3, 34, 25],
+        [14,  45,  10,  3, 40, 20]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Ventas ultimos 15 días',
+          subtitle: 'Pesos Colombianos (COP)'
+        },
+        width: 650,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+
+    <!--FINAL JAVASCRIPT-->
+
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-line-up">
+                <div class="header-line-up-left">
+                    <p>Siguenos</p>
+                    <img src="img/icons/ico_twiter.svg">
+                    <img src="img/icons/ico_insta.svg">
+                    <img src="img/icons/ico_fb.svg">
+            
+                </div>
+                <div class="header-line-up-right">
+                      <a th:href="@{/carrito}">
+                            <p>Carrito</p>
+                        </a>
+                    <img src="img/icons/ico-carrito.png">
+                </div>
+            </div>
+            <hr>
+            <div class="header-body">
+                <div class="header-banner-navbar">
+                    <div class="header-banner-navbar-left">
+                        <img src="img/icons/logo.png">
+                          <a th:href="@{/}">
+                            <p>Inicio</p>
+                        </a>
+                        <a th:href="@{/menu}">
+                            <p>Menu</p>
+                        </a>
+                    </div>
+                    <div class="header-banner-navbar-right">
+                        <img src="img/icons/ico_user.svg">
+                        <p>ADMINISTRADOR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br><br>
+  
+
+
+
+
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">PANEL ADMINISTRADOR</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a th:href="@{/adminproduc}">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Admistrar Producto</span>
+          </a>
+
+
+        <li>
+          <a href="#">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+      
+        </li>
+        <li>
+          <a th:href="@{/admincate}">
+            <i class='bx bx-list-ul' ></i>
+            <span class="listadocategorias">Administrar categorias</span>
+          </a>
+        </li>
+
+         <li>
+          <a th:href="@{/estadisticas}" class="active">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Estadisticas</span>
+          </a>
+        </li>
+        
+        
+      <li class="log_out"><a th:href="@{/}"> <i
+					class='bx bx-log-out'></i> <span class="links_name">Log out</span>
+			</a></li>
+      </ul>
+  </div>
+  <section class="home-section">
+  
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Visitas</div>
+            <div class="number">42,876</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text"></span>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total  Ventas</div>
+            <div class="number">38,876</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text"></span>
+            </div>
+          </div>
+          <i class='bx bxs-cart-add cart two' ></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Pagos iniciados</div>
+            <div class="number">1,200</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text"></span>
+            </div>
+          </div>
+          <i class='bx bx-cart cart three' ></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Canceladas</div>
+            <div class="number">280</div>
+            <div class="indicator">
+              <i class='bx bx-down-arrow-alt down'></i>
+              <span class="text"></span>
+            </div>
+          </div>
+          <i class='bx bxs-cart-download cart four' ></i>
+        </div>
+      </div>
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">GRAFICO</div>
+          <div class="sales-details">
+            <div id="line_top_x"></div>
+          </div>
+          <div class="button">
+            <a href="#">See All</a>
+          </div>
+        </div>
+
+        <div class="top-sales box">
+          <div class="title">Top Productos + Vendidos</div>
+          <ul class="top-sales-details">
+            <li>
+            <a href="#">
+              <!--<img src="images/sunglasses.jpg" alt="">-->
+              <span class="product">Salchipollo</span>
+            </a>
+            <span class="price">1</span>
+          </li>
+          <li>
+            <a href="#">
+               <!--<img src="images/jeans.jpg" alt="">-->
+              <span class="product">Perro Sencillo</span>
+            </a>
+            <span class="price">2</span>
+          </li>
+          <li>
+            <a href="#">
+             <!-- <img src="images/nike.jpg" alt="">-->
+              <span class="product">Pancelotti</span>
+            </a>
+            <span class="price">3</span>
+          </li>
+          <li>
+            <a href="#">
+              <!--<img src="images/scarves.jpg" alt="">-->
+              <span class="product">Hamburguesa Mixta</span>
+            </a>
+            <span class="price">4</span>
+          </li>
+          <li>
+            <a href="#">
+              <!--<img src="images/blueBag.jpg" alt="">-->
+              <span class="product">CocaCola Ligth</span>
+            </a>
+            <span class="price">5</span>
+          </li>
+          <li>
+            <a href="#">
+              <!--<img src="images/bag.jpg" alt="">-->
+              <span class="product">Hamburguesiña</span>
+            </a>
+            <span class="price">6</span>
+          <li>
+            <a href="#">
+              <!--<img src="images/addidas.jpg" alt="">-->
+              <span class="product">Perro Americano</span>
+            </a>
+            <span class="price">7</span>
+          </li>
+<li>
+            <a href="#">
+             <!--<img src="images/shirt.jpg" alt="">-->
+              <span class="product">Sandwich Pollo</span>
+            </a>
+            <span class="price">8</span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+
+
+
+
+
+ 
+
+
+
+
+    
+
+
+</body>
+</html>
