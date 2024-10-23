@@ -1,0 +1,92 @@
+.carrito{
+	justify-content: center;
+	padding: 100px;
+	background-color: #141414;
+	font-family: 'Lato',sans-serif;
+    font-weight: normal;
+    font-size: 25;
+
+}
+
+
+
+.tftable {
+  	font-size:12px;
+  	color:#fbfbfb;
+  	width:100%;
+  	border-width: 1px;
+  	border-color: #686767;
+  	border-collapse: collapse;
+  		text-align:center;
+
+  }
+.tftable th {
+	font-size:12px;
+	background-color:#171515;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #686767;
+	text-align:center;
+	justify-content: center;
+
+
+}
+.tftable tr {
+	background-color:#2f2f2f;
+}
+.tftable td {
+	font-size:12px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #686767;
+	text-align:center;
+
+}
+.tftable tr:hover {
+	background-color:#171515;
+}
+
+
+.total{
+	
+	align-content: right;
+	align-items: right;
+}
+
+.imglogoborrar{
+
+	width: 30px;
+	height: 30px;
+
+}
+
+
+.imgproducto{
+
+	width: 150px;
+	height: 150px;
+
+}
+
+.pagar{
+	background-color: #04F342;
+border-color: #686767;
+	color: black;
+	
+
+}
+
+.pagar:hover {
+	background-color:#FDEE06;
+    color: #000000;
+}
+
+
+.selectnum{
+	height: 40px;
+	width: 80px;
+	font-size: 40px;
+}
+
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <title>Menu Piquant</title>
+</head>
+<body>
+    <div class="header-container">
+        <header>
+
+            <div class="header-line-up">
+                <div class="header-line-up-left">
+                    <p>Siguenos</p>
+                    <img src="img/icons/ico_twiter.svg">
+                    <img src="img/icons/ico_insta.svg">
+                    <img src="img/icons/ico_fb.svg">
+            
+                </div>
+                <div class="header-line-up-right">
+                     <a th:href="@{/carrito}">
+                            <p>Carrito</p>
+                        </a>
+                    <img src="img/icons/ico-carrito.png">
+                </div>
+            </div>
+            <hr>
+            <div class="header-body">
+               <div class="header-banner-navbar">
+					<div class="header-banner-navbar-left">
+						<img src="img/icons/logo.png">
+						<a th:href="@{/}">
+							<p>Inicio</p>
+						</a>
+						<a th:href="@{/menu}">
+							<p>Menu</p>
+						</a>
+					</div>
+					<div class="header-banner-navbar-right">
+						<img src="img/icons/ico_user.svg">
+						<div sec:authorize="isAnonymous()">
+							<a th:href="@{/login}">
+							<p>Iniciar sesion </p>
+						</a>
+						</div>
+						<div sec:authorize="!isAnonymous()">
+							<form th:action="@{/logout}" method="post">
+							<input type="submit" value="Cerrar Sesion" />
+						</form>
+						</div>
+					</div>
+				</div>
+                <div class="header-banner">
+                    <div class="header-banner-text">
+                        <p class="header-banner-title">NUESTRO MENU</p> <br>
+                        <h4>¡Descubre nuestro delicioso menú en Mestieri Fast Food! <br>
+                            Hemos creado una amplia selección de platos que seguramente satisfarán todos tus antojos. <br>
+                             En Mestieri Fast Food, estamos listos para deleitarte con nuestras especialidades, <br>
+                            preparadas con pasión y servidas con una sonrisa. <br><br>
+                            ¡Ven y disfruta de una experiencia culinaria única en nuestro restaurante!</h4>
+                
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="menu-container">
+        <br><br><br><br><br>
+        <div class="slider-container">
+            <div class="slider-container-child">
+                <div class="slider-items">
+                    <p>FILTRAR POR</p>
+                    <input type="button" value="Hamburguesas">
+                    <input type="button" value="Perros Calientes">
+                    <input type="button" value="Salchipapas">
+                    <input type="button" value="Sandwhich">
+                    <input type="button" value="Empanadas">
+                
+                </div>
+                <hr>
+            </div>
+            
+        </div>
+        <div class="menu">
+            <div class="menu-row">
+                <div th:each="prod:${productos}" th:style="'background-image:url(' + ${prod.img}+ ')'"  class="menu-item">                
+                   <button type="button" class="addProduc-button" th:id="${prod.id_producto}">Añadir al carrito</button>                                   													
+                    <p th:text="${prod.nombre}"></p>
+                    <p th:text="${prod.descripcion}"></p>
+                    <p th:text="${prod.valor}"></p>
+                </div>
+
+            </div>
+
+           
+
+            
+
+            
+        </div>
+
+        
+    </div>
+
+
+
+
+
+    <footer>
+        <div class="container-footer">
+            <div class="container-footer-child">
+                <div class="footer-item">
+                    <img src="img/icons/logo2.png">
+                    <p>
+                        ¡Las mejores hamburguesas artesanales de la ciudad!<br>
+                        ¡Deleitarte del mejor sabor!
+                    </p>
+                    <div class="footer-container-list">
+                        <div class="footer-list">
+                            <img src="img/icons/mail.png" alt="">
+                            <p>mestieri-cucuta@outlook.com</p>
+                        </div>
+                        <div class="footer-list">
+                            <img src="img/icons/phone.png" alt="">
+                            <p>320 8757467</p>
+                        </div>
+                        <div class="footer-list">
+                            <img src="img/icons/location.png" alt="">
+                            <p>Calle 3 #7e-54 Quinta Oriental, Cúcuta, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <h1 class="title">Instagram</h1>
+                    <a href=""></a>
+                </div>
+                <div class="footer-item">
+                    <h1 class="title">Facebook</h1>
+                    <a href=""></a>
+                </div>
+
+            </div>
+            <div class="footer-copy">
+                <hr>
+                <p> © 2023. Déchets productions, All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+<script th:inline="javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.addProduc-button');
+    if (buttons) {
+      buttons.forEach(b => {
+        b.addEventListener('click', (event) => {
+          let itemId = b.getAttribute('id');	
+          let link = '/addProducto/';
+          console.log(link)
+          console.log('Soy el id' + itemId)
+          fetch(link + itemId)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              console.log('Request successfully completed');
+            })
+            .catch((error) => {
+              console.error('There has been a problem while contacting server:', error);
+            });
+        });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

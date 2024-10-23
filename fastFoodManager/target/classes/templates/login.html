@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" th:href="@{/css/menu.css}">
+	<link rel="stylesheet" th:href="@{/css/footer.css}">
+	<link rel="stylesheet" th:href="@{/css/registro.css}">
+
+
+	<title>Iniciar sesion</title>
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<div class="header-line-up">
+				<div class="header-line-up-left">
+					<p>Siguenos</p>
+					<img src="img/icons/ico_twiter.svg"> <img src="img/icons/ico_insta.svg"> <img
+						src="img/icons/ico_fb.svg">
+
+				</div>
+				<div class="header-line-up-right">
+					<a th:href="@{/carrito}">
+						<p>Carrito</p>
+					</a>
+					<img src="img/icons/ico-carrito.png">
+				</div>
+			</div>
+			<hr>
+			<div class="header-body">
+				<div class="header-banner-navbar">
+					<div class="header-banner-navbar-left">
+						<img src="img/icons/logo.png"> <a th:href="@{/}">
+							<a th:href="@{/}">
+								<p>Inicio</p>
+							</a>
+							<a th:href="@{/menu}">
+								<p>Menu</p>
+							</a>
+					</div>
+					<div class="header-banner-navbar-right">
+						<img src="img/icons/ico_user.svg"> <a th:href="@{/login}">
+							<p>Iniciar sesion</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="container">
+		<h1>&bull; Iniciar sesion &bull;</h1>
+
+		<form th:action="@{/login}" method="post" id="contact_form">
+			<div class="name">
+				<label for="name"></label> <input  type="text" placeholder="Correo" name="nombre"
+					id="nombre_input" required>
+			</div>
+
+			<div class="apellidos">
+				<label for="apellidos"></label> <input type="text" placeholder="Contraseña"
+					name="password" id="apellidos_input" required>
+			</div>
+
+			<div class="submit">
+				<input type="submit" value="Login" id="form_button" />
+			</div>
+			<br>
+			<a style="color:#000" th:href="@{/register}">¿No tienes cuenta, registrate aqui</a>
+		</form>
+		<!-- // End form -->
+		<div th:if="${param.error}" class="alert alert-danger" role="alert">
+			Usuario y/o contraseña incorrectos
+		</div>
+		<div th:if="${param.logout}" class="alert alert-danger" role="alert">
+			Sesion cerrada
+		</div>
+
+	</div>
+	<!-- // End #container -->
+
+
+
+
+
+
+
+	<footer>
+		<div class="container-footer">
+			<div class="container-footer-child">
+				<div class="footer-item">
+					<img src="img/icons/logo2.png">
+					<p>
+						¡Las mejores hamburguesas artesanales de la ciudad!<br>
+						¡Deleitarte del mejor sabor!
+					</p>
+					<div class="footer-container-list">
+						<div class="footer-list">
+							<img src="img/icons/mail.png" alt="">
+							<p>mestieri-cucuta@outlook.com</p>
+						</div>
+						<div class="footer-list">
+							<img src="img/icons/phone.png" alt="">
+							<p>320 8757467</p>
+						</div>
+						<div class="footer-list">
+							<img src="img/icons/location.png" alt="">
+							<p>Calle 3 #7e-54 Quinta Oriental, Cúcuta, Colombia</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-item">
+					<h1 class="title">Instagram</h1>
+					<a href=""></a>
+				</div>
+				<div class="footer-item">
+					<h1 class="title">Facebook</h1>
+					<a href=""></a>
+				</div>
+
+			</div>
+			<div class="footer-copy">
+				<hr>
+				<p> © 2023. Déchets productions, All Rights Reserved</p>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+
+</html>

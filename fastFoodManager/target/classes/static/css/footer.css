@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+
+.container-footer{
+    padding: 3em 0em 3em 0em;
+    background-color: #141415;
+}
+
+.container-footer-child{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 70%;
+    color: #fff;
+    
+}
+
+.footer-item{
+    display: flex;
+    flex-direction: column;
+    width: 500PX;
+    font-family: 'Roboto Slab', serif;
+    font-size: 13px;
+    
+     
+}
+
+.footer-item h1{
+    color: #fff;
+    align-self: center;
+}
+
+
+.footer-item img{
+    width: 200px;
+    padding-bottom: 2em;
+   
+}
+
+.footer-container-list{
+    padding-top: 1em;
+    
+}
+
+.footer-list{
+    display: flex;
+    align-items: flex-start;
+    
+
+}
+
+.footer-list img{
+    width: 15px;
+    padding-right: 0.5em;
+    
+}
+
+.footer-copy{
+    padding-top: 3em;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Roboto Slab', serif;
+}
+.footer-copy hr{
+    padding-top: 1em;
+    border: none;
+    border-top: 2px dashed #323234;
+    
+
+    
+}

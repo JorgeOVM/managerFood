@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/carrito.css">
+	<script src="jquery-3.6.0.min.js"></script>
+	<title>Carrito de compras</title>
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<div class="header-line-up">
+				<div class="header-line-up-left">
+					<p>Siguenos</p>
+					<img src="img/icons/ico_twiter.svg">
+					<img src="img/icons/ico_insta.svg">
+					<img src="img/icons/ico_fb.svg">
+
+				</div>
+				<div class="header-line-up-right">
+					<a th:href="@{/carrito}">
+						<p>Carrito</p>
+					</a>
+					<img src="img/icons/ico-carrito.png">
+				</div>
+			</div>
+			<hr>
+			<div class="header-body">
+				<div class="header-banner-navbar">
+					<div class="header-banner-navbar-left">
+						<img src="img/icons/logo.png">
+						<a th:href="@{/}">
+							<p>Inicio</p>
+						</a>
+						<a th:href="@{/menu}">
+							<p>Menu</p>
+						</a>
+					</div>
+					<div class="header-banner-navbar-right">
+						<img src="img/icons/ico_user.svg">
+						<div sec:authorize="isAnonymous()">
+							<a th:href="@{/menu}">
+							<p>Iniciar sesion </p>
+						</a>
+						</div>
+						<div sec:authorize="!isAnonymous()">
+							<form th:action="@{/logout}" method="post">
+							<input type="submit" value="Cerrar Sesion" />
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="carrito">
+
+
+		<table class="tftable" border="1">
+			<tr>
+				<th> Eliminar </th>
+				<th> Producto </th>
+				<th>Nombre</th>
+				<th>Precio</th>
+				<th>Cantidad </th>
+				<th>Total:</th>
+			</tr>
+
+			<tr th:each="produc:${productos}">
+				</th:block>
+				<td> <img class="imglogoborrar" src="img/icons/borrar.png"> </td>
+				<td> <img class="imgproducto" th:src="@{${produc.img}}"></td>
+				<td th:text="${produc.nombre}"> </td>
+				<td> <input readonly th:attr="value= ${produc.valor}"  type="number" class="valor"></td>
+				<td> <input class="selectnum cantidad" type="number" id="quantity"  th:name="quantity" min="1" max="99" value=1> </td>
+				<td>
+				 <p class="total" ></p>
+				 </td>
+				
+			</tr>
+		</table>
+				
+		<br>
+		<br>
+		<br>
+		<div clas="total">
+			<div style="width: 60%; float:left">
+			</div>
+			<div style="width: 40%; float:right">
+				<table class="tftable" border="1">
+					<tr>
+						<th>Resumen Compra</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td> T0TAL</td>
+						<td id="pagar">  </td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td class="pagar"> PAGAR</td>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
+	</div>
+	<footer>
+		<div class="container-footer">
+			<div class="container-footer-child">
+				<div class="footer-item">
+					<img src="img/icons/logo2.png">
+					<p>
+						¡Las mejores hamburguesas artesanales de la ciudad!<br>
+						¡Deleitarte del mejor sabor!
+					</p>
+					<div class="footer-container-list">
+						<div class="footer-list">
+							<img src="img/icons/mail.png" alt="">
+							<p>mestieri-cucuta@outlook.com</p>
+						</div>
+						<div class="footer-list">
+							<img src="img/icons/phone.png" alt="">
+							<p>320 8757467</p>
+						</div>
+						<div class="footer-list">
+							<img src="img/icons/location.png" alt="">
+							<p>Calle 3 #7e-54 Quinta Oriental, Cúcuta, Colombia</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-item">
+					<h1 class="title">Instagram</h1>
+					<a href=""></a>
+				</div>
+				<div class="footer-item">
+					<h1 class="title">Facebook</h1>
+					<a href=""></a>
+				</div>
+
+			</div>
+			<div class="footer-copy">
+				<hr>
+				<p> © 2023. Déchets productions, All Rights Reserved</p>
+			</div>
+		</div>
+	</footer>
+ <script src="js/script.js"></script>
+
+</body>
+
+</html>

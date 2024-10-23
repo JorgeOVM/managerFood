@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{css/index.css}">
+
+	<title>Home</title>
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<div class="header-line-up">
+				<div class="header-line-up-left">
+					<p>Siguenos</p>
+					<img th:src="@{img/icons/ico_twiter.svg}">
+					<img th:src="@{img/icons/ico_insta.svg}">
+					<img th:src="@{img/icons/ico_fb.svg}">
+
+				</div>
+				<div class="header-line-up-right">
+					<a th:href="@{/carrito}">
+						<p>Carrito</p>
+					</a>
+					<img th:src="@{img/icons/ico-carrito.png}">
+				</div>
+			</div>
+			<hr>
+			<div class="header-body">
+				<div class="header-banner-navbar">
+					<div class="header-banner-navbar-left">
+						<img src="img/icons/logo.png">
+						<a th:href="@{/}">
+							<p>Inicio</p>
+						</a>
+						<a th:href="@{/menu}">
+							<p>Menu</p>
+						</a>
+					</div>
+					<div class="header-banner-navbar-right">
+						<img src="img/icons/ico_user.svg">
+						<div sec:authorize="isAnonymous()">
+							<a th:href="@{/login}">
+							<p>Iniciar sesion </p>
+						</a>
+						</div>
+						<div sec:authorize="!isAnonymous()">
+							<form th:action="@{/logout}" method="post">
+							<input type="submit" value="Cerrar Sesion" />
+						</form>
+						</div>
+					</div>
+				</div>
+				<div class="header-banner">
+					<div class="header-banner-text">
+						<p class="header-banner-title">Mestieri Fast Food</p> <br>
+						<h4>¡Bienvenidos a Mestieri Fast Food, el lugar donde la deliciosa comida rápida se combina con la atención impecable! <br> <br>
+							Nuestro restaurante está dedicado a satisfacer tus antojos más rápidos sin comprometer la calidad de los ingredientes.
+							Cada plato está cuidadosamente preparado para brindarte una experiencia culinaria excepcional.<br> <br> <br>
+							¡Ven y descubre por qué somos la opción favorita de los amantes de la comida rápida!</h4>
+
+					</div>
+					<img src="img/burger-banner-draw.png">
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container-body-par">
+
+		<div class="container-body-index">
+
+			<div class="body-index">
+				<img src="img/food/hamburguesa.jpeg">
+				<h1 class="title">Hamburguesa Doble Cheese And Bacon</h1>
+				<p>Hamburguesa con doble croqueta de carne de 110 gr cada una, pan brioche, doble croqueta de carne,
+					tocineta, queso cheddar, americano, pepinos curtidos y salsa de la casa.</p>
+			</div>
+			<div class="body-index">
+				<img src="img/food/perro.jpeg">
+				<h1 class="title">Hot Dog Fundador</h1>
+				<p>Perro con pan brioche, salchicha americana, queso mozzarella, queso cheddar, tocineta picada,
+					pepinillos encurtidos y salsa de la casa.</p>
+			</div>
+			<div class="body-index">
+				<img src="img/food/salchipapa.jpeg">
+				<h1 class="title">Salchipapas Básicas</h1>
+				<p>Papas a la francesa, salchicha americana, queso mozzarella, cheddar, salsa de la casa y vegetales de temporada.</p>
+			</div>
+		</div>
+		<div class="container-gallery">
+			<div class="container-gallery-title">
+				<p>Nuestros Productos</p>
+			</div>
+			<div class="container-gallery-child">
+				<div class="gallery-card">
+					<img src="img/food/hamburguesaMixta.jpeg" alt="">
+				</div>
+				<div class="gallery-card">
+					<img src="img/food/papas.jpeg" alt="">
+				</div>
+				<div class="gallery-card">
+					<img src="img/food/sandwhicPollo.jpeg" alt="">
+				</div>
+				<div class="gallery-card">
+					<img src="img/food/empanadas.jpeg" alt="">
+				</div>
+				<div class="gallery-card">
+					<img src="img/food/papasChedar.jpeg" alt="">
+				</div>
+
+			</div>
+		</div>
+		<div class="container-body-aboutus">
+			<div class="body-aboutus">
+				<h1 class="title">ACERCA DE MESTIERI</h1>
+				<h4>En Mestieri, nos apasiona brindar una experiencia culinaria única y sabrosa a nuestros clientes. <br>
+					Desde nuestro humilde comienzo como un pequeño puesto de comida rápida, nos hemos convertido en un
+					destino reconocido para aquellos que buscan deleitar sus paladares con platos rápidos y deliciosos.<br><br>
+
+					Nuestro enfoque se basa en la combinación perfecta de calidad y rapidez. <br>Utilizamos ingredientes
+					frescos y de alta calidad para preparar nuestras comidas llenas de sabor. <br>
+					Cada plato es cuidadosamente elaborado por nuestro talentoso
+					equipo, quienes se esfuerzan por mantener los estándares más altos en cada preparación.<br><br>
+
+					En Mestieri Fast Food, estamos comprometidos con tu satisfacción y esperamos verte pronto en nuestro restaurante. <br><br>
+					¡Gracias por ser parte de nuestra historia y por apoyarnos en nuestro viaje gastronómico!
+
+				</h4>
+			</div>
+			<div class="body-aboutus">
+				<img src="img/aboutus.jpeg">
+			</div>
+		</div>
+		<div class="container-contact">
+			<div class="container-contact-child">
+				<div class="container-contact-info">
+
+					<h1 class="title">INFORMACIÓN DE CONTACTO</h1> <br> <br>
+
+					<div class="contact-item">
+						<div>
+							<h3>Desde temprana edad he sentido pasión por la preparación de la mejor comida rápida.🍔🌭🍟🥪<br>
+								Por eso inicie el viaje de descubrir el mejor sabor de la historia de las hamburguesas.<br>
+								Soy Cesar y quiero que seas parte de este proceso que nombre MESTIERI.🤩🙏🏻</h3> <br><br>
+							<h3>Calle 3 #7e-54 Quinta Oriental, Cúcuta, Colombia</h3><br><br>
+							<h3>320 8757467</h3> <br><br>
+							<h3>🍔  🍟  🌭  🍕  🥟  🥤  🍧  🥪</h3>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="container-horario">
+					<div class="container-horario-child">
+						<p>HORARIO DE ATENCION</p>
+						<ul>
+							<li>Lunes ..................... 4:00-11:00 pm</li>
+							<li>Miercoles .............. 4:00-11:00 pm</li>
+							<li>Jueves .................... 4:00-11:00 pm</li>
+							<li>Viernes .................. 4:00-11:00 pm</li>
+							<li>Sabado .................. 4:00-11:00 pm</li>
+							<li>Domingo ................ 4:00-11:00 pm</li>
+						</ul>
+					</div> <br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container-footer">
+			<div class="container-footer-child">
+				<div class="footer-item">
+					<img src="img/icons/logo2.png">
+					<p>
+						¡Las mejores hamburguesas artesanales de la ciudad!<br>
+						¡Deleitarte del mejor sabor!
+					</p>
+					<div class="footer-container-list">
+						<div class="footer-list">
+							<img src="img/icons/mail.png" alt="">
+							<p>mestieri-cucuta@outlook.com</p>
+						</div>
+						<div class="footer-list">
+							<img src="img/icons/phone.png" alt="">
+							<p>320 8757467</p>
+						</div>
+						<div class="footer-list">
+							<img src="img/icons/location.png" alt="">
+							<p>Calle 3 #7e-54 Quinta Oriental, Cúcuta, Colombia</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-item">
+					<h1 class="title">Instagram</h1>
+					<a href=""></a>
+				</div>
+				<div class="footer-item">
+					<h1 class="title">Facebook</h1>
+					<a href=""></a>
+				</div>
+
+			</div>
+			<div class="footer-copy">
+				<hr>
+				<p> © 2023. Déchets productions, All Rights Reserved</p>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>
