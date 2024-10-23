@@ -25,6 +25,14 @@ jobs:
           distribution: "adopt"
           java-version: "11"
 
+      - name: Check database connection
+        run: |
+          echo "Checking database connection..."
+          until nc -z junction.proxy.rlwy.net 39909; do
+            echo "Waiting for database connection..."
+            sleep 5
+          done
+
       - name: Build with Maven
         run: mvn clean package
 
